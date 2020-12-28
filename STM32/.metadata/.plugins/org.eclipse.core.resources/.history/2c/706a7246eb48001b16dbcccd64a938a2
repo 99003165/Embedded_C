@@ -1,0 +1,62 @@
+/*
+ * STM32F4XX.h
+ *
+ *  Created on: Dec 28, 2020
+ *      Author: 99003165
+ */
+
+#ifndef INC_STM32F4XX_H_
+#define INC_STM32F4XX_H_
+
+/*Defining macros for the various memories*/
+
+#define FLASH_ADDR 		0x80000000U
+#define SRAM1_ADDR		0x20000000U
+#define SRAM2_ADDR		0x2001C000U
+#define ROM_ADDR		0x1FFF0000U
+#define SRAM_ADDR		SRAM1_ADDR
+
+/* Defining macros for bus */
+
+#define AHB1_BASEADDR		0x40020000U
+#define AHB2_BASEADDR		0x50000000U
+#define APB1_BASEADDR		0x40000000U
+#define APB2_BASEADDR		0x40010000U
+#define PERI_BASEADDR		APB1_BASEADDR
+
+/*Defining the macros for peripherals which are hanging on to AHB1 bus*/
+
+#define GPIOA_BASEADDR			(AHB1_BASEADDR	+ 0X0000U)
+#define GPIOB_BASEADDR			(AHB1_BASEADDR	+ 0X0400U)
+#define GPIOC_BASEADDR			(AHB1_BASEADDR 	+ 0X0800U)
+#define GPIOD_BASEADDR			(AHB1_BASEADDR	+ 0X0C00U)
+#define GPIOE_BASEADDR			(AHB1_BASEADDR	+ 0X1000U)
+#define GPIOF_BASEADDR			(AHB1_BASEADDR	+ 0X1400U)
+#define GPIOG_BASEADDR			(AHB1_BASEADDR	+ 0X1800U)
+#define GPIOH_BASEADDR			(AHB1_BASEADDR	+ 0X1C00U)
+#define GPIOI_BASEADDR			(AHB1_BASEADDR	+ 0X2000U)
+
+/*Defining the macros for peripherals which are hanging on to AHB2 bus*/
+						//None
+
+/*Defining the macros for peripherals which are hanging on to APB1 bus*/
+
+#define SPI2_I2S2_BASEADDR		(APB1_BASEADDR	+ 0X3800U)
+#define SPI3_I2S3_BASEADDR		(APB1_BASEADDR	+ 0X3C00U)
+#define USART2_BASEADDR			(APB1_BASEADDR	+ 0X4400U)
+#define USART3_BASEADDR			(APB1_BASEADDR	+ 0X4800U)
+#define UART4_BASEADDR			(APB1_BASEADDR	+ 0X4C00U)
+#define UART5_BASEADDR			(APB1_BASEADDR	+ 0X5000U)
+#define I2C1_BASEADDR			(APB1_BASEADDR	+ 0X5400U)
+#define I2C2_BASEADDR			(APB1_BASEADDR	+ 0X5800U)
+#define I2C3_BASEADDR			(APB1_BASEADDR	+ 0X5C00U)
+#define CAN1_BASEADDR			(APB1_BASEADDR	+ 0X6400U)
+#define CAN2_BASEADDR			(APB1_BASEADDR	+ 0X6800U)
+
+/*Defining the macros for peripherals which are hanging on to APB2 bus*/
+
+#define USART1_BASEADDR			(APB2_BASEADDR	+ 0X1000U)
+#define USART6_BASEADDR			(APB2_BASEADDR	+ 0X1400U)
+#define SPI1_BASEADDR			(APB2_BASEADDR	+ 0X3000U)
+
+#endif /* INC_STM32F4XX_H_ */

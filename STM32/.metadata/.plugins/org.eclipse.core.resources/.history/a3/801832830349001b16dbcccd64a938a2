@@ -1,0 +1,28 @@
+/*
+ * STM32FXX_GPIO_DRIVER.h
+ *
+ *  Created on: Dec 28, 2020
+ *      Author: 99003165
+ */
+
+#include "STM32F4XX.h"
+
+#ifndef INC_STM32FXX_GPIO_DRIVER_H_
+#define INC_STM32FXX_GPIO_DRIVER_H_
+
+/*GPIO Pin configuration*/
+
+typedef struct
+{
+
+}GPIO_PIN_CONFIG_t;
+
+/* GPIO Handle structure  */
+
+typedef struct
+{
+	REG_DEF_t *pGPIOx;
+	GPIO_PIN_CONFIG_t PIN_CONFIG;
+}GPIO_HANDLE_t;
+
+#endif /* INC_STM32FXX_GPIO_DRIVER_H_ */

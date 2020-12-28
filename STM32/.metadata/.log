@@ -1,0 +1,51 @@
+!SESSION 2020-12-23 17:06:21.052 -----------------------------------------------
+eclipse.buildId=Version 1.5.0
+java.version=1.8.0_272
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2020-12-23 17:08:11.494
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2020-12-23 17:08:11.605
+!MESSAGE Log4j initialized with config file C:\Users\99003165\Desktop\Genesis\STM32\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2020-12-23 17:08:19.707
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 4 4 2020-12-23 17:08:20.998
+!MESSAGE com.st.stm32cube.ide.mcu.ide/META-INF/version/build_ref file not found, build reference will not be reported into properties
+
+!ENTRY org.eclipse.cdt.core 1 0 2020-12-23 17:15:09.196
+!MESSAGE Indexed 'STM32_Eg1' (2 sources, 52 headers) in 2.4 sec: 1,918 declarations; 2,731 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.043%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2020-12-24 15:38:23.319
+!MESSAGE Indexed 'SWV_Debug' (3 sources, 52 headers) in 0.313 sec: 1,920 declarations; 2,733 references; 0 unresolved inclusions; 2 syntax errors; 2 unresolved names (0.043%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2020-12-24 16:48:57.643
+!MESSAGE Indexed 'SWV_Debug' (3 sources, 52 headers) in 0.311 sec: 1,922 declarations; 2,743 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.043%)
+!SESSION 2020-12-28 09:18:03.253 -----------------------------------------------
+eclipse.buildId=Version 1.5.0
+java.version=1.8.0_272
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2020-12-28 09:18:19.356
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2020-12-28 09:18:19.520
+!MESSAGE Log4j initialized with config file C:\Users\99003165\Desktop\Genesis\STM32\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2020-12-28 09:18:31.278
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 4 4 2020-12-28 09:18:31.978
+!MESSAGE com.st.stm32cube.ide.mcu.ide/META-INF/version/build_ref file not found, build reference will not be reported into properties
+
+!ENTRY org.eclipse.cdt.core 1 0 2020-12-28 09:20:31.982
+!MESSAGE Indexed 'STM_Driver' (2 sources, 52 headers) in 1.89 sec: 1,918 declarations; 2,731 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.043%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2020-12-28 11:37:05.308
+!MESSAGE Indexed 'STM_Driver' (3 sources, 52 headers) in 0.295 sec: 1,920 declarations; 2,732 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.043%)
