@@ -24,8 +24,15 @@
   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
 #endif
 
-int main(void)
-{
+//int main(void)
+
     /* Loop forever */
-	for(;;);
-}
+	/*for(;;);
+	/*GPIO_Handle_t GpioLed;
+	GpioLed.pGPIOx = GPIOd;
+	GpioLed.PIN_CONFIG.GPIO_PinNumber=GPIO_PinNumber_15;
+	GpioLed.PIN_CONFIG.GPIO_PinMode=GPIO_PinMode_OUT;
+	GpioLed.PIN_CONFIG.GPIO_PinSpeed=GPIO_PinSpeed_FAST;
+	GpioLed.PIN_CONFIG.GPIO_PinOPType=GPIO_OUT_PP;
+	GpioLed.PIN_CONFIG.GPIO_PinPuPdControl=GPIO_PIN_PU;	*/
+

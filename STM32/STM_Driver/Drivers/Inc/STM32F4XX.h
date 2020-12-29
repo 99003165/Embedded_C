@@ -98,16 +98,21 @@ typedef struct
 	uint32_t RESERVED2[2];
 	__vo uint32_t RCC_AHB1ENR;//
 	__vo uint32_t RCC_AHB2ENR;//
-	uint32_t RESERVED3[2];
 	__vo uint32_t RCC_AHB3ENR;
+	uint32_t RESERVED3;
+	__vo uint32_t RCC_APB1ENR;
 	__vo uint32_t RCC_APB2ENR;
+	uint32_t RESERVED4[2];
 	__vo uint32_t RCC_AHB1LPENR;//
 	__vo uint32_t RCC_AHB2LPENR;//
-	__vo uint32_t RCC_AHB3LPENR; //
+	__vo uint32_t RCC_AHB3LPENR;
+	uint32_t RESERVED5;//
 	__vo uint32_t RCC_APB1LPENR;
 	__vo uint32_t RCC_APB2LPENR;
+	uint32_t RESERVED6[2];
 	__vo uint32_t RCC_BDCR;
 	__vo uint32_t RCC_CSR;
+	uint32_t RESERVED7[2];
 	__vo uint32_t RCC_SSCGR;
 	__vo uint32_t RCC_PLLI2SCFGR;
 	__vo uint32_t RCC_PLLSAICFGR;
@@ -115,35 +120,56 @@ typedef struct
 
 }RCC_REG_DEF_t;
 
+#define RCC		((RCC_REG_DEF_t *)RCC_BASEADDR)	//
 
-/*GPIO clock enable*/
 
-#define GPIOA_PCLOCK_EN		RCC_BASEADDR->RCC_AHB1ENR |= 1<<0;
-#define GPIOB_PCLOCK_EN		RCC_BASEADDR->RCC_AHB1ENR |= 1<<1;
-#define GPIOC_PCLOCK_EN		RCC_BASEADDR->RCC_AHB1ENR |= 1<<2;
-#define GPIOD_PCLOCK_EN		RCC_BASEADDR->RCC_AHB1ENR |= 1<<3;
-#define GPIOE_PCLOCK_EN		RCC_BASEADDR->RCC_AHB1ENR |= 1<<4;
-#define GPIOF_PCLOCK_EN		RCC_BASEADDR->RCC_AHB1ENR |= 1<<5;
-#define GPIOG_PCLOCK_EN		RCC_BASEADDR->RCC_AHB1ENR |= 1<<6;
-#define GPIOH_PCLOCK_EN		RCC_BASEADDR->RCC_AHB1ENR |= 1<<7;
-#define GPIOI_PCLOCK_EN		RCC_BASEADDR->RCC_AHB1ENR |= 1<<8;
+/*GPIO Clock Enable*/
+
+#define GPIOA_PCLOCK_EN()		(RCC->RCC_AHB1ENR |= 1<<0)
+#define GPIOB_PCLOCK_EN()		(RCC->RCC_AHB1ENR |= 1<<1)
+#define GPIOC_PCLOCK_EN()		(RCC->RCC_AHB1ENR |= 1<<2)
+#define GPIOD_PCLOCK_EN()		(RCC->RCC_AHB1ENR |= 1<<3)
+#define GPIOE_PCLOCK_EN()		(RCC->RCC_AHB1ENR |= 1<<4)
+#define GPIOF_PCLOCK_EN()		(RCC->RCC_AHB1ENR |= 1<<5)
+#define GPIOG_PCLOCK_EN()		(RCC->RCC_AHB1ENR |= 1<<6)
+#define GPIOH_PCLOCK_EN()		(RCC->RCC_AHB1ENR |= 1<<7)
+#define GPIOI_PCLOCK_EN()		(RCC->RCC_AHB1ENR |= 1<<8)
+
+
+/*GPIO Clock Disable/Reset */
+
+#define GPIOA_PCLOCK_DI()		do{(RCC->RCC_AHB1RSTR |= 1<<0); (RCC->RCC_AHB1RSTR &= ~(1<<0));} while(DISABLE)
+#define GPIOB_PCLOCK_DI()		do{(RCC->RCC_AHB1RSTR |= 1<<1); (RCC->RCC_AHB1RSTR &= ~(1<<1));} while(DISABLE)
+#define GPIOC_PCLOCK_DI()		do{(RCC->RCC_AHB1RSTR |= 1<<2); (RCC->RCC_AHB1RSTR &= ~(1<<2));} while(DISABLE)
+#define GPIOD_PCLOCK_DI()		do{(RCC->RCC_AHB1RSTR |= 1<<3); (RCC->RCC_AHB1RSTR &= ~(1<<3));} while(DISABLE)
+#define GPIOE_PCLOCK_DI()		do{(RCC->RCC_AHB1RSTR |= 1<<4); (RCC->RCC_AHB1RSTR &= ~(1<<4));} while(DISABLE)
+#define GPIOF_PCLOCK_DI()		do{(RCC->RCC_AHB1RSTR |= 1<<5); (RCC->RCC_AHB1RSTR &= ~(1<<5));} while(DISABLE)
+#define GPIOG_PCLOCK_DI()		do{(RCC->RCC_AHB1RSTR |= 1<<6); (RCC->RCC_AHB1RSTR &= ~(1<<6));} while(DISABLE)
+#define GPIOH_PCLOCK_DI()		do{(RCC->RCC_AHB1RSTR |= 1<<7); (RCC->RCC_AHB1RSTR &= ~(1<<7));} while(DISABLE)
+#define GPIOI_PCLOCK_DI()		do{(RCC->RCC_AHB1RSTR |= 1<<8); (RCC->RCC_AHB1RSTR &= ~(1<<8));} while(DISABLE)
 
 
 /*GPIO Peripheral*/
 
-#define GPIOA 	(GPIO_REG_DEF_T *)GPIOA_BASEADDR
-#define GPIOB 	(GPIO_REG_DEF_T *)GPIOB_BASEADDR
-#define GPIOC 	(GPIO_REG_DEF_T *)GPIOC_BASEADDR
-#define GPIOD	(GPIO_REG_DEF_T *)GPIOD_BASEADDR
-#define GPIOE 	(GPIO_REG_DEF_T *)GPIOE_BASEADDR
-#define GPIOF 	(GPIO_REG_DEF_T *)GPIOF_BASEADDR
-#define GPIOG 	(GPIO_REG_DEF_T *)GPIOG_BASEADDR
-#define GPIOH 	(GPIO_REG_DEF_T *)GPIOH_BASEADDR
-#define GPIOI 	(GPIO_REG_DEF_T *)GPIOI_BASEADDR
+#define GPIOA 	((GPIO_REG_DEF_t *)GPIOA_BASEADDR)
+#define GPIOB 	((GPIO_REG_DEF_t *)GPIOB_BASEADDR)
+#define GPIOC 	((GPIO_REG_DEF_t *)GPIOC_BASEADDR)
+#define GPIOD	((GPIO_REG_DEF_t *)GPIOD_BASEADDR)
+#define GPIOE 	((GPIO_REG_DEF_t *)GPIOE_BASEADDR)
+#define GPIOF 	((GPIO_REG_DEF_t *)GPIOF_BASEADDR)
+#define GPIOG 	((GPIO_REG_DEF_t *)GPIOG_BASEADDR)
+#define GPIOH 	((GPIO_REG_DEF_t *)GPIOH_BASEADDR)
+#define GPIOI 	((GPIO_REG_DEF_t *)GPIOI_BASEADDR)
 
 
+/*Other macro definitions*/
 
+#define ENABLE			1
+#define DISABLE			0
+#define GPIO_PIN_SET 	ENABLE
+#define GPIO_PIN_RESET 	DISABLE
 
+#include "STM32FXX_GPIO_DRIVER.h"
 
 
 #endif /* INC_STM32F4XX_H_ */

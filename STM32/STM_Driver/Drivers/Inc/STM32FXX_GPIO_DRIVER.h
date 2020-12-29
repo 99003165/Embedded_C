@@ -63,6 +63,7 @@ typedef struct
 /**/
 
 
+
 /*GPIO output modes*/
 
 #define GPIO_OUT_PP				0
@@ -83,11 +84,11 @@ typedef struct
 
 /*Peripheral clock setup*/
 
-void GPIO_PericlockControl(GPIO_REG_DEF_t *pGPIOx, uint8_t Enordi);
+void GPIO_PericlockControl(GPIO_REG_DEF_t *pGPIOx, uint8_t EnorDi);
 
 /* Init and De-init*/
 
-void GPIO_Init(GPIO_Handle_t);
+void GPIO_Init(GPIO_Handle_t *pGPIOHandle);
 void GPIO_deInit(GPIO_REG_DEF_t *pGPIOx);
 
 
