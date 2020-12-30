@@ -1,0 +1,53 @@
+/*
+ * STM32FXX_GPIO_DRIVER.c
+ *
+ *  Created on: Dec 28, 2020
+ *      Author: 99003165
+ */
+
+#include "STM32FXX_GPIO_DRIVER.h"
+
+/*Peripheral clock setup*/
+
+void GPIO_PericlockControl(GPIO_REG_DEF_t *pGPIOx, uint8_t EnorDi)
+{
+	if(EnorDi == ENABLE)
+	{
+		if(*pGPIOx == GPIOA)
+			GPIOA_PCLOCK_EN();
+		else if(*pGPIOx == GPIOB)
+			GPIOB_PCLOCK_EN();
+		else if(*pGPIOx == GPIOC)
+			GPIOC_PCLOCK_EN();
+		else if(*pGPIOx == GPIOD)
+			GPIOD_PCLOCK_EN();
+		else if(*pGPIOx == GPIOE)
+			GPIOE_PCLOCK_EN();
+		else if(*pGPIOx == GPIOF)
+			GPIOF_PCLOCK_EN();
+		else if(*pGPIOx == GPIOG)
+			GPIOG_PCLOCK_EN();
+		else if(*pGPIOx == GPIOH)
+			GPIOH_PCLOCK_EN();
+		else if(*pGPIOx == GPIOI)
+			GPIOI_PCLOCK_EN();
+	}
+	else
+	{
+		//to do
+	}
+}
+
+/* Init and De-init*/
+
+void GPIO_Init(GPIO_Handle_t);
+void GPIO_deInit(GPIO_REG_DEF_t *pGPIOx);
+
+
+/*Data read and write*/
+
+uint8_t GPIO_ReadFromInputPin(GPIO_REG_DEF_t *pGPIOx, uint8_t PinNumber);
+uint16_t GPIO_ReadFromInputPort(GPIO_REG_DEF_t *pGPIOx);
+void GPIO_WriteToOutputPin(GPIO_REG_DEF_t *pGPIOx, uint8_t PinNumber, uint8_t Value);
+void GPIO_WriteToOutputPort(GPIO_REG_DEF_t *pGPIOx, uint8_t Value);
+void GPIO_ToggleOutputPin(GPIO_REG_DEF_t *pGPIOx, uint8_t PinNumber);

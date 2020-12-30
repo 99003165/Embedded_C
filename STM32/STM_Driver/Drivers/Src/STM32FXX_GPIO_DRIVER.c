@@ -183,7 +183,7 @@ void GPIO_WriteToOutputPin(GPIO_REG_DEF_t *pGPIOx, uint8_t PinNumber, uint8_t Va
 {
 	if(Value == GPIO_PIN_SET)
 	{
-		pGPIOx->ODR |= 1 << PinNumber;
+		pGPIOx->ODR |= (1 << PinNumber);
 	}
 	else
 	{

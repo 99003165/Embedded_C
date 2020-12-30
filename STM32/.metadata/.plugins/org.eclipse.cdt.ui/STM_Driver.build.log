@@ -1,21 +1,10 @@
-17:40:20 **** Incremental Build of configuration Debug for project STM_Driver ****
+16:42:33 **** Incremental Build of configuration Debug for project STM_Driver ****
 make -j4 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -DDEBUG -c -I"C:/Users/99003165/Desktop/Genesis/STM32/STM_Driver/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Drivers/Src/STM32FXX_GPIO_DRIVER.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -DDEBUG -c -I"C:/Users/99003165/Desktop/Genesis/STM32/STM_Driver/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/Src/STM32FXX_GPIO_DRIVER.d" -MT"Drivers/Src/STM32FXX_GPIO_DRIVER.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/Src/STM32FXX_GPIO_DRIVER.o"
-arm-none-eabi-gcc -o "STM_Driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\99003165\Desktop\Genesis\STM32\STM_Driver\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM_Driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: STM_Driver.elf
- 
-arm-none-eabi-objdump -h -S  STM_Driver.elf  > "STM_Driver.list"
-arm-none-eabi-objcopy  -O binary  STM_Driver.elf  "STM_Driver.bin"
 arm-none-eabi-size   STM_Driver.elf 
    text	   data	    bss	    dec	    hex	filename
-    676	      8	   1568	   2252	    8cc	STM_Driver.elf
+   1644	      8	   1568	   3220	    c94	STM_Driver.elf
 Finished building: default.size.stdout
  
-Finished building: STM_Driver.list
-Finished building: STM_Driver.bin
- 
- 
 
-17:40:21 Build Finished. 0 errors, 0 warnings. (took 994ms)
+16:42:33 Build Finished. 0 errors, 0 warnings. (took 331ms)
 

@@ -1,0 +1,126 @@
+/*
+ * STM32FXX_GPIO_DRIVER.c
+ *
+ *  Created on: Dec 28, 2020
+ *      Author: 99003165
+ */
+
+#include "STM32FXX_GPIO_DRIVER.h"
+
+/*Peripheral clock setup*/
+
+void GPIO_PericlockControl(GPIO_REG_DEF_t *pGPIOx, uint8_t EnorDi)
+{
+	if(EnorDi == ENABLE)
+	{
+		if(pGPIOx == GPIOA)
+		{
+			GPIOA_PCLOCK_EN();
+		}
+		else if(pGPIOx == GPIOB)
+		{
+			GPIOB_PCLOCK_EN();
+		}
+		else if(pGPIOx == GPIOC)
+		{
+			GPIOC_PCLOCK_EN();
+		}
+		else if(pGPIOx == GPIOD)
+		{
+			GPIOD_PCLOCK_EN();
+		}
+		else if(pGPIOx == GPIOE)
+		{
+			GPIOE_PCLOCK_EN();
+		}
+		else if(pGPIOx == GPIOF)
+		{
+			GPIOF_PCLOCK_EN();
+		}
+		else if(pGPIOx == GPIOG)
+		{
+			GPIOG_PCLOCK_EN();
+		}
+		else if(pGPIOx == GPIOH)
+		{
+			GPIOH_PCLOCK_EN();
+		}
+		else if(pGPIOx == GPIOI)
+		{
+			GPIOI_PCLOCK_EN();
+		}
+	}
+	else
+	{
+		if(pGPIOx == GPIOA)
+		{
+			GPIOA_PCLOCK_DI();
+		}
+		else if(pGPIOx == GPIOB)
+		{
+			GPIOB_PCLOCK_DI();
+		}
+		else if(pGPIOx == GPIOC)
+		{
+			GPIOC_PCLOCK_EN();
+		}
+		else if(pGPIOx == GPIOD)
+		{
+			GPIOD_PCLOCK_EN();
+		}
+		else if(pGPIOx == GPIOE)
+		{
+			GPIOE_PCLOCK_EN();
+		}
+		else if(pGPIOx == GPIOF)
+		{
+			GPIOF_PCLOCK_EN();
+		}
+		else if(pGPIOx == GPIOG)
+		{
+			GPIOG_PCLOCK_EN();
+		}
+		else if(pGPIOx == GPIOH)
+		{
+			GPIOH_PCLOCK_EN();
+		}
+		else if(pGPIOx == GPIOI)
+		{
+			GPIOI_PCLOCK_EN();
+		}
+	}
+}
+
+/* Init and De-init*/
+
+void GPIO_Init(GPIO_Handle_t *pGPIOHandle)
+{
+	uint32_t temp1 = 0, temp2 = 0, temp3 = 0, temp4 = 0;
+	if((pGPIOHandle->PIN_CONFIG.GPIO_PinMode) <= GPIO_PinMode_ANALOG )
+	{
+		temp1 = pGPIOHandle->PIN_CONFIG.GPIO_PinMode <<(2*pGPIOHandle->PIN_CONFIG.GPIO_PinNumber);
+		pGPIOHandle->pGPIOx->MODER = temp1;
+	}
+
+	temp2 = pGPIOHandle->PIN_CONFIG.GPIO_PinSpeed << (2*pGPIOHandle->PIN_CONFIG.GPIO_PinNumber);
+	pGPIOHandle->pGPIOx->OSPEEDR = temp2;
+
+	temp3 = pGPIOHandle->PIN_CONFIG.GPIO_PinPuPdControl << (2*pGPIOHandle->PIN_CONFIG.GPIO_PinNumber);
+	pGPIOHandle->pGPIOx->PUPDR = temp3;
+
+	temp4 = pGPIOHandle->PIN_CONFIG.GPIO_PinOPType << (pGPIOHandle->PIN_CONFIG.GPIO_PinNumber);
+	pGPIOHandle->pGPIOx->ODR = temp4;
+
+
+}
+
+void GPIO_deInit(GPIO_REG_DEF_t *pGPIOx);
+
+
+/*Data read and write*/
+/*
+uint8_t GPIO_ReadFromInputPin(GPIO_REG_DEF_t *pGPIOx, uint8_t PinNumber);
+uint16_t GPIO_ReadFromInputPort(GPIO_REG_DEF_t *pGPIOx);
+void GPIO_WriteToOutputPin(GPIO_REG_DEF_t *pGPIOx, uint8_t PinNumber, uint8_t Value);
+void GPIO_WriteToOutputPort(GPIO_REG_DEF_t *pGPIOx, uint8_t Value);
+void GPIO_ToggleOutputPin(GPIO_REG_DEF_t *pGPIOx, uint8_t PinNumber);*/

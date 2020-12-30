@@ -1,0 +1,34 @@
+#include "STM32F4XX.h"
+
+int main()
+{
+GPIO_Handle_t GPIOLED;
+GPIO_Handle_t PUSH;
+PUSH.pGPIOx = GPIOA;
+PUSH.PIN_CONFIG.GPIO_PinNumber = GPIO_PinNumber_0;
+PUSH.PIN_CONFIG.GPIO_PinMode = GPIO_PinMode_IN;
+PUSH.PIN_CONFIG.GPIO_PinPuPdControl = GPIO_PIN_PU;
+PUSH.PIN_CONFIG.GPIO_PinOPType = GPIO_OUT_PP;
+
+GPIOLED.pGPIOx = GPIOD;
+GPIOLED.PIN_CONFIG.GPIO_PinNumber = GPIO_PinNumber_12;
+GPIOLED.PIN_CONFIG.GPIO_PinMode = GPIO_PinMode_OUT;
+GPIOLED.PIN_CONFIG.GPIO_PinSpeed = GPIO_PinSpeed_FAST;
+GPIOLED.PIN_CONFIG.GPIO_PinOPType = GPIO_OUT_PP	;
+GPIOLED.PIN_CONFIG.GPIO_PinPuPdControl = GPIO_PIN_PU;
+
+GPIO_PericlockControl(GPIOA, ENABLE);
+GPIO_PericlockControl(GPIOD, ENABLE);
+GPIO_Init(&PUSH);
+GPIO_Init(&GPIOLED);
+
+while(1)
+{
+	if(GPIO_ReadFromInputPin(GPIOA, GPIO_PinNumber_0) == ENABLE)
+	{
+		GPIO_WriteToOutputPin(GPIOD, GPIO_PinNumber_12, ENABLE);
+	}
+
+}
+
+}

@@ -60,7 +60,7 @@ typedef struct
 #define GPIO_PinMode_IT_RT 		5
 #define GPIO_PinMode_IT_RFT		6
 
-/**/
+/*ALternate function modes*/
 
 
 

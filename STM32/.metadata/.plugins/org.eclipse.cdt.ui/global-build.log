@@ -1,18 +1,24 @@
-17:40:20 **** Incremental Build of configuration Debug for project STM_Driver ****
+15:10:04 **** Incremental Build of configuration Debug for project STM32_IDE_1 ****
 make -j4 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -DDEBUG -c -I"C:/Users/99003165/Desktop/Genesis/STM32/STM_Driver/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Drivers/Src/STM32FXX_GPIO_DRIVER.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -DDEBUG -c -I"C:/Users/99003165/Desktop/Genesis/STM32/STM_Driver/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/Src/STM32FXX_GPIO_DRIVER.d" -MT"Drivers/Src/STM32FXX_GPIO_DRIVER.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/Src/STM32FXX_GPIO_DRIVER.o"
-arm-none-eabi-gcc -o "STM_Driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\99003165\Desktop\Genesis\STM32\STM_Driver\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM_Driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: STM_Driver.elf
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32_IDE_1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\99003165\Desktop\Genesis\STM32\STM32_IDE_1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_IDE_1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_IDE_1.elf
  
-arm-none-eabi-objdump -h -S  STM_Driver.elf  > "STM_Driver.list"
-arm-none-eabi-objcopy  -O binary  STM_Driver.elf  "STM_Driver.bin"
-arm-none-eabi-size   STM_Driver.elf 
+arm-none-eabi-objdump -h -S  STM32_IDE_1.elf  > "STM32_IDE_1.list"
+arm-none-eabi-objcopy  -O binary  STM32_IDE_1.elf  "STM32_IDE_1.bin"
+arm-none-eabi-size   STM32_IDE_1.elf 
    text	   data	    bss	    dec	    hex	filename
-    676	      8	   1568	   2252	    8cc	STM_Driver.elf
+   5868	     20	   1572	   7460	   1d24	STM32_IDE_1.elf
 Finished building: default.size.stdout
  
-Finished building: STM_Driver.list
-Finished building: STM_Driver.bin
+Finished building: STM32_IDE_1.bin
+Finished building: STM32_IDE_1.list
  
+ 
+15:10:10 **** Incremental Build of configuration Debug for project STM32_IDE_1 ****
+make -j4 all 
+arm-none-eabi-size   STM32_IDE_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5868	     20	   1572	   7460	   1d24	STM32_IDE_1.elf
+Finished building: default.size.stdout
  
