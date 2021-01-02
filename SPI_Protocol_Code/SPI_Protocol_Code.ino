@@ -4,13 +4,14 @@ volatile boolean Rxd;
 volatile byte Slave_Rxd;
 
 void setup() {
-  //Serial.begin(9600);
+  Serial.begin(9600);
   pinMode(10, OUTPUT); // SS
   digitalWrite(10, LOW);
+  pinMode(MISO, OUTPUT);
   SPCR |= _BV(SPE);  //Turn on SPI in Slave Mode
   SPCR |= _BV(SPIE); //Turn on SPI Interrupt in Slave Mode
   Rxd = false;
-  Serial.begin(9600);
+  //Serial.begin(9600);
   SPI.attachInterrupt(); 
 }
 

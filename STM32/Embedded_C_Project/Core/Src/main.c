@@ -109,17 +109,15 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  do{
+	  while(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_1) == 1){
 		  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 1);
-	      HAL_SPI_Transmit(&hspi1, &Data_1, 1, 10);
-	      DelayFunc();
-	    }while(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_1) == 1);
-
-	  if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_1) == 0)
-	  {
-		  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 0);
-	      HAL_SPI_Transmit(&hspi1, &Data_2, 1, 10);
-	  }
+ 		  HAL_SPI_Transmit(&hspi1, &Data_1, 1, 10);
+ 		  DelayFunc();
+ 		  while(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_1) == 0){
+ 			  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 0);
+ 		      HAL_SPI_Transmit(&hspi1, &Data_2, 1, 10);
+ 		 }
+ 	  }
   }
   /* USER CODE END 3 */
 }
