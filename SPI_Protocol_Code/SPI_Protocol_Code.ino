@@ -15,10 +15,10 @@ void setup() {
   SPI.attachInterrupt(); 
 }
 
-ISR (SPI_STC_vect)                        //Inerrrput routine function 
+ISR (SPI_STC_vect)                        //Interrupt routine function 
 {
-  Slave_Rxd = SPDR;                   // Value received from master if store in variable slavereceived
-  Rxd = true;                        //Sets received as True 
+  Slave_Rxd = SPDR;                  
+  Rxd = true;                        
 }
 
 void loop() {
